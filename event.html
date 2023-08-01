@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ body{
+    background-color: black;
+ }
+
+    
+#time{
+
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-radius: 350px;
+    height:600px;
+    width: 40%;
+    /* background-color: #d2c1d6; */
+    background-image: url("6bea3036c38a229aab0987f25b06d8d1.jpg");
+    background-position: center;
+    margin-top: 50px;
+    margin-left: 400px;
+    text-align: center;
+    
+}
+
+</style>
+<script>
+    setInterval(showTime,1000);
+    function showTime(){
+       let time = new Date();
+       let hour = time.getHours();
+       let min = time.getMinutes();
+       let sec = time.getSeconds();
+       am_pm ="AM";
+       
+       if(hour>12){
+        hour-=12;
+
+        am_pm ="PM"
+       }
+      if(hour ==0){
+      hour =12;
+      am_pm ="AM";
+      }
+       hour=hour<10 ?"0"+hour:hour;
+       min=min<10 ?"0"+min:min;
+       sec=sec<10 ?"0"+sec:sec;
+
+       let current = hour+":"+min+":"+sec+am_pm;
+
+      document.getElementById("clock").innerHTML =current;
+    }
+        showTime();
+</script>
+</head>
+<body>
+  
+    <div id="time">
+         <p id="clock" style="color:rgb(17, 145, 230);text-align:center; font-size: 70px; margin-top: 250px;">11:11:01 A.M</p>
+
+    </div>
+
+</body>
+</html>
